@@ -1,7 +1,7 @@
 Package: abntools
 Version: 0.0.0.9000
-Title: What the Package Does (One Line, Title Case)
-Description: What the package does (one paragraph).
+Title: Tools for Working with Australian Business Numbers (ABNs)
+Description: Provides tools for working with ABNs.
 Authors@R: person("Callum", "Savage", email = "callum.s.savage@gmail.com", role = c("aut", "cre")
 License: MIT + file LICENSE
 Encoding: UTF-8
