@@ -1,3 +1,13 @@
+#' Use a checksum to identify if an ABN is valid.
+#'
+#' @param abns A numeric or character vector of ABNs
+#'
+#' @return A logical vector of the same length as abns identifying if each
+#'     element is a valid ABN
+#' @export
+#'
+#' @examples
+#'     is_abn(19621994018)
 is_abn <- function(abns) {
 
   if (is.list(abns)) {
