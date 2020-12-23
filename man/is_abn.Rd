@@ -2,20 +2,23 @@
 % Please edit documentation in R/is_abn.R
 \name{is_abn}
 \alias{is_abn}
-\title{Use a checksum to identify if an ABN is valid .}
+\title{Use a checksum to identify if a number is in the format of an ABN.}
 \usage{
-is_abn(abns)
+is_abn(x)
 }
 \arguments{
-\item{abns}{A numeric or character vector of ABNs}
+\item{x}{A numeric or character vector of numbers to check}
 }
 \value{
-A logical vector of the same length as abns identifying if each
-element is a valid ABN
+A logical vector of the same length as \code{x} identifying if
+each element is in the format of a valid ABN
 }
 \description{
-Use a checksum to identify if an ABN is valid .
+This function identifies if a number is in the format of a valid ABN, using
+the rules oultined \href{https://abr.business.gov.au/Help/AbnFormat}{here}. Note
+that this function does not confirm that the ABN is valid; it simply checks
+if it \emph{could} be valid.
 }
 \examples{
-    is_abn(19621994018)
+is_abn(19621994018)
 }
