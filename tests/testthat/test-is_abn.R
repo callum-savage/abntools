@@ -22,8 +22,8 @@ test_that("white space characters don't interrupt evaluation", {
   expect_false(is_abn("  8 7 235 24  8 117 "))
 
   # combination of spaces and tabs
-  expect_true(is_abn("83  783 686 257"))
-  expect_false(is_abn("83  783 686 258"))
+  expect_true(is_abn("8 3  783 686 257"))
+  expect_false(is_abn("8  3  783 686 258"))
 })
 
 test_that("is_abn is vectorised", {

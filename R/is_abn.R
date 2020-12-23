@@ -23,7 +23,7 @@ is_abn <- function(x) {
     x <- as.character(x)
   }
 
-  x <- gsub(" ", "", x, fixed = TRUE)
+  x <- gsub("\\s", "", x)
   x[nchar(x, keepNA = FALSE) != 11] <- "00000000000"
   abn_matrix <- simplify2array(lapply(strsplit(x, "", fixed = TRUE), as.numeric))
   abn_sums <- colSums(abn_matrix * c(10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19))
