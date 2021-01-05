@@ -1,18 +1,25 @@
-#' Use a checksum to identify if a number is in the format of an ABN.
+#' Use a checksum to identify if a given input is in the format of an ABN.
 #'
-#' This function identifies if a number is in the format of a valid ABN, using
+#' This function identifies if an input is in the format of a valid ABN using
 #' the rules oultined [here](https://abr.business.gov.au/Help/AbnFormat). Note
-#' that this function does not confirm that the ABN is valid; it simply checks
-#' if it *could* be valid.
+#' that this function does not confirm that the ABN is valid or active; it
+#' simply checks if it *could* be valid.
 #'
-#' @param x A numeric or character vector of numbers to check
+#' @param x A numeric or character vector of ABNs to check
 #'
-#' @return A logical vector of the same length as \code{x} identifying if
-#'   each element is in the format of a valid ABN
+#' @return A logical vector of the same length as \code{x} identifying if each
+#'   element is in the format of a valid ABN
 #' @export
 #'
 #' @examples
+#' # Single ABN
 #' is_abn(19621994018)
+#'
+#' # Numeric vector
+#' is_abn(c(19621994018, 81601798609))
+#'
+#' # Character vector which may include arbitrary white space
+#' is_abn(c("50 110 219 460", "79 769 424 861"))
 is_abn <- function(x) {
 
   if (is.list(x)) {

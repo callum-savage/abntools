@@ -20,5 +20,12 @@ that this function does not confirm that the ABN is valid; it simply checks
 if it \emph{could} be valid.
 }
 \examples{
+# Single ABN
 is_abn(19621994018)
+
+# Numeric vector
+is_abn(c(19621994018, 81601798609))
+
+# Character vector
+is_abn(c("50 110 219 460", "79 769 424 861"))
 }
