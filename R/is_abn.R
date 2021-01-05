@@ -22,10 +22,6 @@
 #' is_abn(c("50 110 219 460", "79 769 424 861"))
 is_abn <- function(x) {
 
-  if (is.list(x)) {
-    x <- unlist(x)
-  }
-
   if (!is.character(x)) {
     x <- as.character(x)
   }
