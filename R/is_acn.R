@@ -1,12 +1,25 @@
+#' Use a checksum to identify if a given input is in the format of an ACN
+#'
+#' This function identifies if an input is in the format of a valid ACN using
+#' the rules oultined [here](https://asic.gov.au/for-business/registering-a-company/steps-to-register-a-company/australian-company-numbers/australian-company-number-digit-check/). Note
+#' that this function does not confirm that the ACN is valid or active; it
+#' simply checks if it *could* be valid.
+#'
+#' @param x A character vector of ACNs to check
+#'
+#' @return A logical vector of the same length as \code{x} identifying if each
+#'   element is in the format of a valid ACN
+#' @export
+#'
+#' @examples
+#' # Single ACN
+#' is_acn("110219460")
+#'
+#' # Character vector which may include arbitrary white space
+#' is_acn(c("001 250 004", "001 999 999"))
 is_acn <- function(x) {
 
-  if (is.list(x)) {
-    acns <- unlist(x)
-  }
-
-  if (!is.character(x)) {
-    x <- as.character(x)
-  }
+  # TODO add warning for non-character vectors
 
   x <- gsub("\\s", "", x)
   x[nchar(x, keepNA = FALSE) != 9] <- "000000001"
